@@ -1,0 +1,31 @@
+version: '3'
+services:
+        web:
+                image: nginx_vitor:latest
+                ports:
+                  - "8080:80"
+        exporter:
+                image: nginx/nginx-prometheus-exporter:0.4.2
+                environment:
+                  - SCRAPE_URI=http://18.219.219.70:8080/metrics
+                  - TELEMETRY_PATH=/prometheus
+                  - NGINX_RETRIES=10
+                ports: 
+                  - "9113:9113"
+                links:
+                  - web
+        prometheus:
+                image: prom/prometheus
+                ports:
+                  - "9090:9090"
+                volumes:
+                  - ./prometheus.yml:/etc/prometheus/prometheus.yml
+                links:
+                  - exporter
+        grafana:
+                image: grafana/grafana
+                ports:
+                  - "3000:3000"
+                links:
+                  - prometheus
+
