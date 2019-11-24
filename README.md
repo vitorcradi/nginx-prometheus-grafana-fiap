@@ -33,7 +33,8 @@ scrape_configs:
 Comando para Subir
 docker run -d -p 9090:9090 -v /home/ubuntu/nginx/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 
-
+Subindo o Grafana
+docker run -d -p 3000:3000 grafana/grafana
 
 ## Bibliografia
 https://medium.com/@wilsonjnior/escutando-os-quatro-sinais-de-ouro-do-sre-usando-nginx-prometheus-grafana-6f2b7f9577dc
