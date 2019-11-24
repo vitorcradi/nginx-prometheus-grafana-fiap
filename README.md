@@ -32,3 +32,17 @@ scrape_configs:
 
 Comando para Subir
 docker run -d -p 9090:9090 -v /home/ubuntu/nginx/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+
+
+
+## Bibliografia
+https://medium.com/@wilsonjnior/escutando-os-quatro-sinais-de-ouro-do-sre-usando-nginx-prometheus-grafana-6f2b7f9577dc
+https://github.com/wpjunior/nginx-vts
+
+
+https://dimitr.im/monitoring-nginx-with-prometheus-and-grafana
+https://github.com/nginxinc/nginx-prometheus-exporter
+
+http://nginx.org/en/docs/http/ngx_http_stub_status_module.html
+
+https://hub.docker.com/_/nginx?tab=description
