@@ -1,8 +1,8 @@
-# nginx-prometheus-grafana-fiap
+# nginx-prometheus-grafana-fiap  
 Trabalho de Sre da fiap, neste projeto estamos subindo o nginx com uma pagina qualquer e monitorando com prometheus e criando graficos no grafana
 
 
-Como subir (ainda em construção):
+Como subir (ainda em construção):  
 Criando imagem personalizada do nginx (usado este conteúdo do Dockerfile onde índex é uma saudação e o health tem uma msg de ok):
 Step 1/4 : FROM nginx
  ---> 231d40e811cd
@@ -17,12 +17,12 @@ docker run -d -p 8080:80 nginx_vitor:latest
 
 
 
-Nginx to prometheus exporter
+Nginx to prometheus exporter  
 
 docker run -d -p 9113:9113 nginx/nginx-prometheus-exporter:0.4.2 -nginx.scrape-uri http://18.219.219.70:8080/metrics -nginx.retries=10 -web.telemetry-path=/prometheus
 
 
-Subindo o prometheus onde o conteúdo do yml está abaixo:
+Subindo o prometheus onde o conteúdo do yml está abaixo:  
 scrape_configs:
   - job_name: 'nginx-vitor'
     scrape_interval: 1m
@@ -30,10 +30,10 @@ scrape_configs:
     static_configs:
       - targets: ['18.219.219.70:9113']
 
-Comando para Subir
+Comando para Subir  
 docker run -d -p 9090:9090 -v /home/ubuntu/nginx/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
 
-Subindo o Grafana
+Subindo o Grafana  
 docker run -d -p 3000:3000 grafana/grafana
 
 ## Bibliografia
