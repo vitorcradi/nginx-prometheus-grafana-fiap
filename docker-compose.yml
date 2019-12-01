@@ -48,3 +48,5 @@ services:
                 links:
                   - prometheus
 
+networks:
+  redinha:
