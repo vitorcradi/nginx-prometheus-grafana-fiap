@@ -41,10 +41,10 @@ services:
                 image: grafana/grafana
                 ports:
                   - "3000:3000"
-                                networks:
+                networks:
                         redinha:
                                 aliases:
-                                  - prometheus_container
+                                  - grafana_container
                 links:
                   - prometheus
 
