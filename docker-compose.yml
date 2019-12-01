@@ -4,6 +4,10 @@ services:
                 image: nginx_vitor:latest
                 ports:
                   - "8080:80"
+                networks:
+                        redinha:
+                                aliases:
+                                  - nginx_container
         exporter:
                 image: nginx/nginx-prometheus-exporter:0.4.2
                 environment:
@@ -12,7 +16,13 @@ services:
                   - NGINX_RETRIES=10
                 ports: 
                   - "9113:9113"
+                networks:
+                        redinha:
+                                aliases:
+                                  - prometheus_exporter
                 links:
+                  - web
+                depends_on:
                   - web
         prometheus:
                 image: prom/prometheus
@@ -20,12 +30,20 @@ services:
                   - "9090:9090"
                 volumes:
                   - ./prometheus.yml:/etc/prometheus/prometheus.yml
+                networks:
+                        redinha:
+                                aliases:
+                                  - prometheus_container
                 links:
                   - exporter
         grafana:
                 image: grafana/grafana
                 ports:
                   - "3000:3000"
+                                networks:
+                        redinha:
+                                aliases:
+                                  - prometheus_container
                 links:
                   - prometheus
 
