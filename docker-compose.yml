@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-        web:
+        c_web:
                 image: nginx_vitor:latest
                 ports:
                   - "8080:80"
@@ -9,8 +9,6 @@ services:
                                 aliases:
                                   - nginx_container
         exporter:
-                depends_on:
-                  - "web"
                 image: nginx/nginx-prometheus-exporter:0.4.2
                 environment:
                   #- SCRAPE_URI=http://18.219.219.70:8080/metrics
@@ -23,8 +21,10 @@ services:
                         redinha:
                                 aliases:
                                   - prometheus_exporter
-                #links:
-                 # - web
+                depends_on:
+                  - c_web                
+                links:
+                  - web
 
         prometheus:
                 image: prom/prometheus
