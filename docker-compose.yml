@@ -12,7 +12,7 @@ services:
                 image: nginx/nginx-prometheus-exporter:0.4.2
                 environment:
                   #- SCRAPE_URI=http://18.219.219.70:8080/metrics
-                  - SCRAPE_URI=http://nginx_container:8080/metrics
+                  - SCRAPE_URI=http://localhost:8080/metrics
                   - TELEMETRY_PATH=/prometheus
                   - NGINX_RETRIES=10
                 ports: 
