@@ -18,8 +18,8 @@ services:
                         redinha:
                                 aliases:
                                   - prometheus_container
-                links:
-                  - exporter
+                #links:
+                  #- exporter
         grafana:
                 image: grafana/grafana
                 ports:
