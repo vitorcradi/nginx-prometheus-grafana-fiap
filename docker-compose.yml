@@ -24,7 +24,7 @@ services:
                 depends_on:
                   - c_web                
                 links:
-                  - web
+                  - c_web
 
         prometheus:
                 image: prom/prometheus
