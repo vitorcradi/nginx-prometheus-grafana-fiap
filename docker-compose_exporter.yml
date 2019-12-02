@@ -13,3 +13,6 @@ services:
                         redinha:
                                 aliases:
                                   - prometheus_exporter
+
+networks:
+  redinha:
