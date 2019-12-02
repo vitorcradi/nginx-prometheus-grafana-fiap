@@ -9,6 +9,8 @@ services:
                                 aliases:
                                   - nginx_container
         exporter:
+                depends_on:
+                  - "web"
                 image: nginx/nginx-prometheus-exporter:0.4.2
                 environment:
                   #- SCRAPE_URI=http://18.219.219.70:8080/metrics
@@ -21,10 +23,9 @@ services:
                         redinha:
                                 aliases:
                                   - prometheus_exporter
-                links:
-                  - web
-                depends_on:
-                  - web
+                #links:
+                 # - web
+
         prometheus:
                 image: prom/prometheus
                 ports:
