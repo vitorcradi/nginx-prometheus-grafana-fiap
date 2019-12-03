@@ -1,7 +1,7 @@
 version: '3'
 services:
         web:
-                image: nginx_vitor:latest
+                build: .
                 ports:
                   - "8080:80"
         exporter:
