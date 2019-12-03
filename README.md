@@ -31,7 +31,7 @@ Grafana - http://localhost:3000/
 8. Selecionar o arquivo Nginx_Dashboard.json
 9. Trocar o nome se quiser e clicar em "import"
 
-Faça alguns requests na página web de bemvindo e observe o gráfico recebendo métricas.
+Faça alguns requests na página web de bem-vindo e observe o gráfico recebendo métricas, espere por cerca de 5 minutos.
 
 
 ## Bibliografia
