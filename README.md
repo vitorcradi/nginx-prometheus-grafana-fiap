@@ -14,7 +14,8 @@ Os componentes do Projeto são 4 containeres:
 3. executar o comando "docker-compose up" (ou "docker-compose up -d" se quiser deixar os serviços rodando em seguindo plano)
 
 ### Acessos:
-Web - http://localhost:8080/  
+Web - http://localhost:8080/
+Web Health check - http://localhost:8080/health  
 Prometheus - http://localhost:9090/targets  
 Grafana - http://localhost:3000/  
 
