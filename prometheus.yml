@@ -3,4 +3,4 @@ scrape_configs:
     scrape_interval: 1m
     metrics_path: '/prometheus'
     static_configs:
-      - targets: ['18.219.219.70:9113']
+      - targets: ['host.docker.internal:9113']
