@@ -1,6 +1,9 @@
 # nginx-prometheus-grafana-fiap  
 Trabalho de Sre da fiap, neste projeto estamos subindo o nginx com uma pagina qualquer e monitorando com prometheus e criando graficos no grafana  
 
+### Pré-requisitos
+Ter o Docker e Docker Compose instalados (neste caso foram testados nas versões docker 2.1.0.5 e compose 1.24.1)
+
 ### Componentes:
 Os componentes do Projeto são 4 containeres:
 1. nginx com uma página de bem vindo com as métricas expostas na pasta /metrics
