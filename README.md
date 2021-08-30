@@ -2,10 +2,10 @@
 Trabalho de Sre da fiap, neste projeto estamos subindo o nginx com uma pagina qualquer e monitorando com prometheus e criando graficos no grafana  
 
 ## Membros
-334387 ADRIANO
-334707 ALEXANDRE 
-334034 VITOR
-
+334387 ADRIANO  
+334707 ALEXANDRE   
+334034 VITOR  
+ 
 ### Pré-requisitos
 Ter o Docker e Docker Compose instalados (neste caso foram testados nas versões docker 2.1.0.5 e compose 1.24.1)
 
